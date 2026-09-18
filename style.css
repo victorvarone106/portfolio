@@ -26,6 +26,7 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
   padding-top: 80px;
+ 
 }
 .navbar {
   display: flex;
@@ -44,66 +45,12 @@ body {
 }
 
 @media only screen  and (min-width:320px) and (max-width:650px){
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    gap: 2px;
-    align-items: center;
-    padding: 10px 15px;
-    border-bottom: 1px solid var(--card-border);
-    flex-wrap: wrap;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: var(--bg-color);
-  
-  }
-  
-  .logo {
-    width: 100%;
-    font-weight: bold;
-    font-size: 10px;
-    color: var(--accent-color);
-    letter-spacing: 0.8px;
-  }
-  
-  #sim{
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
 
-  
-
-  }
   nav a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0 8px;
-    font-size: 10px;
-    font-weight: 400;
-    transition: color 0.2s ease;
+display: none;
   }
   
-  nav a:hover {
-    color: var(--accent-color);
-  }
-  
-  #themeToggle {
-    background: none;
-    color: var(--text-color);
 
-    /* padding: 6px 12px; */
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  #themeToggle:hover {
-    transform: scale(1.1);
-  }
-  
 
 }
 
@@ -178,6 +125,7 @@ nav a:hover {
   margin: 0 auto 30px;
   line-height: 1.7;
   opacity: 0.85;
+  text-align: justify;
 }
 
 .cv-btn {
@@ -221,6 +169,7 @@ h2 {
   margin: 0 auto 40px;
   line-height: 1.7;
   opacity: 0.9;
+  text-align: justify;
 }
 
 .section-subtitle {
@@ -245,7 +194,7 @@ h2 {
   border: 1px solid var(--card-border);
   border-radius: 10px;
   padding: 25px;
-  text-align: left;
+  text-align: justify;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
@@ -306,6 +255,7 @@ h2 {
 .experience-card p {
   line-height: 1.7;
   opacity: 0.9;
+  text-align: justify;
 }
 
 .approach-title {
@@ -384,6 +334,7 @@ h2 {
   margin-bottom: 15px;
   opacity: 0.85;
   line-height: 1.5;
+  text-align: justify;
 }
 
 .project-link {
