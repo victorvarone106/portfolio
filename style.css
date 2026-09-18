@@ -26,36 +26,21 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
   padding-top: 80px;
- 
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 15px 40px;
   border-bottom: 1px solid var(--card-border);
-  flex-wrap: wrap;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   background-color: var(--bg-color);
-
 }
-
-@media only screen  and (min-width:320px) and (max-width:650px){
-
-  nav a {
-display: none;
-  }
-  
-
-
-}
-
-
-
 
 .logo {
   font-weight: bold;
@@ -64,7 +49,11 @@ display: none;
   letter-spacing: 1px;
 }
 
-nav a {
+nav#sim {
+  display: flex;
+}
+
+nav#sim a {
   color: var(--text-color);
   text-decoration: none;
   margin: 0 12px;
@@ -72,8 +61,14 @@ nav a {
   transition: color 0.2s ease;
 }
 
-nav a:hover {
+nav#sim a:hover {
   color: var(--accent-color);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 #themeToggle {
@@ -83,11 +78,60 @@ nav a:hover {
   padding: 6px 12px;
   border-radius: 50%;
   cursor: pointer;
+  border: none;
   transition: transform 0.2s ease;
 }
 
 #themeToggle:hover {
   transform: scale(1.1);
+}
+
+/* Hamburger button - hidden on desktop */
+#menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* MOBILE RESPONSIVE NAVBAR */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  #menuToggle {
+    display: block;
+  }
+
+  nav#sim {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--card-border);
+    padding: 10px 0;
+  }
+
+  nav#sim.active {
+    display: flex;
+  }
+
+  nav#sim a {
+    padding: 12px 20px;
+    margin: 0;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  nav#sim a:last-child {
+    border-bottom: none;
+  }
 }
 
 .hero {
@@ -180,7 +224,6 @@ h2 {
   line-height: 1.6;
 }
 
-/* What I Do grid */
 .what-i-do-grid, .why-grid, .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -228,7 +271,6 @@ h2 {
   border-bottom: none;
 }
 
-/* Experience */
 .experience {
   max-width: 1000px;
   margin: 0 auto;
@@ -303,7 +345,6 @@ h2 {
   line-height: 1.5;
 }
 
-/* Projects */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -347,7 +388,6 @@ h2 {
   text-decoration: underline;
 }
 
-/* Contact */
 .contact-links {
   display: flex;
   justify-content: center;
@@ -372,7 +412,6 @@ h2 {
   transform: translateY(-3px);
 }
 
-/* Vision */
 .vision p {
   max-width: 700px;
   margin: 0 auto;

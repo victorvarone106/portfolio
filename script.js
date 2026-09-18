@@ -1,5 +1,7 @@
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('sim');
 
 // Load saved theme preference on page load
 window.addEventListener('DOMContentLoaded', () => {
@@ -33,6 +35,18 @@ function saveTheme(theme) {
 function getSavedTheme() {
   return currentTheme;
 }
+
+// Toggle mobile menu open/closed
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when a nav link is clicked
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+  });
+});
 
 // Generate and download CV as PDF from site content
 document.getElementById('downloadCvBtn').addEventListener('click', () => {
